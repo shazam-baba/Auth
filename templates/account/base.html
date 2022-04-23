@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+    
+  <style>
+      a, button{
+          text-decoration: none;
+      }
+      .demo{
+            margin: 0;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+      }
+      button{
+            margin: 10px 20px;
+            padding: 5px 10px;  
+            border-radius: 5px;
+            border: none;
+            background-color: #54b4f3;
+            color: white;
+      }
+  </style>
+  </head>
+  <body>
+      <div class="container demo ">
+
+          {% block body %}
+          
+          {% if messages %}
+          
+            {% endif %}
+            
+            <!-- <div class=''>
+                {% if user.is_authenticated %}
+                 <li class="d-inline btn btn-outline-secondary mx-5"><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                    <li><a href="{% url 'account_logout' %}">Sign Out</a></li> 
+                    <a href="{% url 'account_email' %}"><button class="d-inline btn btn-outline-primary mx-5">Change E-mail</button></a>
+                    <a href="{% url 'account_logout' %}"><button class="d-inline btn btn-outline-secondary mx-5">Sign Out</button></a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}"><button class="d-inline btn btn-outline-primary px-5">Sign In</button></a>
+                    <a href="{% url 'account_signup' %}"><button class="d-inline btn btn-outline-secondary px-5">Sign Up</button></a>
+                    {% endif %}
+                </div> -->
+                {% block content %}
+                {% endblock %}
+                {% endblock %}
+                {% block extra_body %}
+                {% endblock %}
+            </div>
+            </body>
+            </html>
